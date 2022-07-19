@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+/* A url or a string representing the location of the resource to import. */
+* {
+  box-sizing: border-box;
+  /* The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not.  */
+}
+body {
+  /* refers to the main body of the HTML file */
+  font-family: 'Muli', sans-serif;
+  /* In CSS there are five generic font families: Serif fonts have a small stroke at the edges of each letter. */
+  display: flex;
+  /* How things are displayed. The flex property is a shorthand property for: flex-grow, flex-shrink, flex-basis */
+  /* The flex property sets the flexible length on flexible items. */
+  align-items: center;
+  /* The align-items property specifies the default alignment for items inside the flexible container. */
+  justify-content: center;
+  /* The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally). */
+  height: 100vh;
+  /* The height property sets the height of an element. */
+  /* If height: auto; the element will automatically adjust its height to allow its content to be displayed correctly. */
+  overflow: hidden;
+  /* The overflow property specifies what should happen if content overflows an element's box. */
+  /* This property specifies whether to clip content or to add scrollbars when an element's content is too big to fit in a specified area. */
+  margin: 0;
+}
+.container {
+  display: flex;
+   /* How things are displayed. The flex property is a shorthand property for: flex-grow, flex-shrink, flex-basis */
+  /* The flex property sets the flexible length on flexible items. */
+  width: 90vw;
+  /* The width property sets the width of an element. */
+  /* The width of an element does not include padding, borders, or margins! */
+ /* Note: The min-width and max-width properties override the width property. */
+}
+.panel {
+  background-size: cover;
+  /* The background-size property specifies the size of the background images. */
+  /* There are four different syntaxes you can use with this property:  */
+  /* the keyword syntax ("auto", "cover" and "contain"), the one-value syntax (sets the width of the image (height becomes "auto") */
+  /* the two-value syntax (first value: width of the image, second value: height), and the multiple background syntax (separated with comma). */
+  background-position: center;
+  /* The background-position property sets the starting position of a background image */
+  background-repeat: no-repeat;
+  /* The background-repeat property sets if/how a background image will be repeated. */
+  /* By default, a background-image is repeated both vertically and horizontally. */
+  height: 80vh;
+  /* The height property sets the height of an element. */
+  /* If height: auto; the element will automatically adjust its height to allow its content to be displayed correctly. */
+  border-radius: 50px;
+  /* The border-radius property defines the radius of the element's corners. */
+  color: #fff;
+  /* The color property specifies the color of text. */
+  cursor: pointer;
+  /* The cursor property specifies the mouse cursor to be displayed when pointing over an element. */
+  flex: 0.5;
+  /* The flex property is a shorthand property for: flex-grow, flex-shrink, flex-basis */
+  /* The flex property sets the flexible length on flexible items. */
+  margin: 10px;
+  /* The margin property sets the margins for an element. A shorthand property for the following properties: margin-top, right, left, bottom */
+  position: relative;
+  /* The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky). */
+  -webkit-transition: all 700ms ease-in;
+}
+  /* The transition property is a shorthand property for: transition-property, transition-duration, transition-timing-function, delay */
+.panel h3 {
+  font-size: 24px;
+  /* The font-size property sets the size of a font. */
+  position: absolute;
+  /* The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky). */
+  bottom: 20px;
+  /* The bottom property affects the vertical position of a positioned element. This property has no effect on non-positioned elements. */
+  left: 20px;
+  /* The left property affects the horizontal position of a positioned element. This property has no effect on non-positioned elements. */
+  /* If position: absolute; or position: fixed; -  */
+  /* the left property sets the left edge of an element to a unit to the left of the left edge of its nearest positioned ancestor. */
+  /* If position: relative; - the left property sets the left edge of an element to a unit to the left/right of its normal position. */
+  /* If position: sticky; - the left property behaves like its position is relative when the element is inside the viewport,  */
+  /* and like its position is fixed when it is outside. */
+  /* If position: static; - the left property has no effect. */
+  margin: 0;
+  /* The margin property sets the margins for an element. A shorthand property for the following properties: margin-top, right, left, bottom */
+  opacity: 0;
+  /* The opacity property sets the opacity level for an element. */
+ /* The opacity-level describes the transparency-level, where 1 is not transparent at all, 0.5 is 50% see-through, and 0 is completely transparent. */
+}
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+    /* The opacity property sets the opacity level for an element. */
+   /* The opacity-level describes the transparency-level, where 1 is not transparent at all, 0.5 is 50% see-through, and 0 is completely transparent. */
+  transition: opacity 0.3s ease-in 0.4s;
+  /* It is a property used to smoothly change the opacity state from one level to another state.  */
+  /* It means the transition opacity changes the state of the opaque element to transparent with a defined time duration. */
+}
+@media (max-width: 480px) {
+  /* max width is 480 pixsel */
+  .container {
+    width: 100vw;
+    /* The width property sets the width of an element. */
+    /* The width of an element does not include padding, borders, or margins! */
+    /* Note: The min-width and max-width properties override the width property. */
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+    /* is commonly used with JavaScript to hide and show elements without deleting and recreating them. */
+    /* link to terms: https://www.w3schools.com/css/css3_flexbox_container.asp */
+  }
+}
